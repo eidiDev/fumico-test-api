@@ -13,6 +13,7 @@ import {
   Override,
   ParsedBody,
   ParsedRequest,
+  CrudAuth
 } from '@nestjsx/crud';
 import { User } from './entities/user.entity';
 import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
@@ -44,6 +45,15 @@ import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
       }
     }
   },
+})
+@CrudAuth({
+  property: 'user',
+  filter: ( user ) => {
+    return { 'id' : user.userId}
+  },
+  persist: (user) => {
+    return {'id' : user.userId }
+  }
 })
 
 
