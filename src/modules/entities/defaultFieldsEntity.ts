@@ -9,12 +9,12 @@ import {
 import { IsBoolean } from 'class-validator';
 
 export abstract class DefaultFieldsEntity extends BaseEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
-  @Column()
-  @Generated('uuid')
-  uuid: string;
+  // @Column()
+  // @Generated('uuid')
+  // uuid: string;
 
   @Column({ default: true })
   is_active: boolean;

@@ -23,13 +23,13 @@ import { Type } from 'class-transformer';
 
 @Entity()
 export class User extends BaseEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: number;
 
   // @PrimaryGeneratedColumn('uuid')
-  @Column()
-  @Generated('uuid')
-  uuid: string;
+  // @Column()
+  // @Generated('uuid')
+  // uuid: string;
 
   @Column({ nullable: true })
   name: string;

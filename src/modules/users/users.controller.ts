@@ -26,7 +26,7 @@ import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
     id: {
       type: 'uuid',
       primary: true,
-      field: 'uuid',
+      field: 'id',
     },
   },
   dto: { create: CreateUserDto, update: UpdateUserDto },
