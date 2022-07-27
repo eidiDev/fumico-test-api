@@ -29,5 +29,5 @@ export class Reminder extends  DefaultFieldsEntity{
 
     @ManyToOne(() => User, (user) => user.reminders, {onDelete: "CASCADE"})
     @IsObject()
-    user: User;
+    owner: User;
 }

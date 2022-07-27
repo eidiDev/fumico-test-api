@@ -10,6 +10,6 @@ export class CreateReminderDto extends BaseEntity {
     @IsString()
     readonly description:string;
 
-    @IsObject()
-    readonly user: User
+    // @IsObject()
+    // readonly owner: User
 }

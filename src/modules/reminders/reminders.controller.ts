@@ -3,8 +3,9 @@ import { RemindersService } from './reminders.service';
 import { CreateReminderDto } from './dto/create-reminder.dto';
 import { UpdateReminderDto } from './dto/update-reminder.dto';
 import { Reminder } from './entities/reminder.entity';
-import { Crud, CrudController } from '@nestjsx/crud';
+import { Crud, CrudController, CrudAuth } from '@nestjsx/crud';
 import { JwtAuthGuard } from '../../auth/jwt-auth.guard'
+import {User} from '../users/entities/user.entity'
 
 @Crud({
   model: {
@@ -20,14 +21,24 @@ import { JwtAuthGuard } from '../../auth/jwt-auth.guard'
   query: {
     alwaysPaginate: true,
     join: {
-      user: {
+      owner: {
         eager: true,
-        exclude: ['password', 'tempPassword', 'token', 'token_created_at']
+        exclude: ['password']
       }
     }
   },
   dto: { create: CreateReminderDto, update: UpdateReminderDto },
 })
+@CrudAuth({
+  property: 'user',
+  filter: ( user ) => {
+    return { 'owner.id' : user.userId}
+  },
+  persist: (user) => {
+    return {'owner' : user.userId }
+  }
+})
+
 @Controller('reminders')
 @UseGuards(JwtAuthGuard)
 export class RemindersController implements CrudController<Reminder>  {

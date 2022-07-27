@@ -61,7 +61,7 @@ export class User extends BaseEntity {
   public updated_at: Date;
 
 
-  @OneToMany(() => Reminder, (user) => user.user, {cascade:true})
+  @OneToMany(() => Reminder, (user) => user.owner, {cascade:true})
   reminders: Reminder[];
 
 

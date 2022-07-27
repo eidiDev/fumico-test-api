@@ -11,7 +11,7 @@ export class UpdateReminderDto extends BaseEntity {
     @IsString()
     readonly description:string;
 
-    @IsOptional()
-    @IsObject()
-    readonly user: User
+    // @IsOptional()
+    // @IsObject()
+    // readonly owner: User
 }
