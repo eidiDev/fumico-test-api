@@ -57,18 +57,18 @@ export class AuthService implements CanActivate {
   }
 
 
-  async validateToken(email: string, token: string): Promise<boolean> {
-    if (email && token) {
-      const user = await this.userService.findByEmail(email);
-      if (token !== user.token || !user.token) {
-        throw new HttpException('INVALID_TOKEN', HttpStatus.FORBIDDEN);
-      } else if (moment().subtract(24, 'hours').isAfter(user.token_created_at)) {
-        throw new HttpException('EXPIRED_TOKEN', HttpStatus.FORBIDDEN);
-      }
+  // async validateToken(email: string, token: string): Promise<boolean> {
+  //   if (email && token) {
+  //     const user = await this.userService.findByEmail(email);
+  //     if (token !== user.token || !user.token) {
+  //       throw new HttpException('INVALID_TOKEN', HttpStatus.FORBIDDEN);
+  //     } else if (moment().subtract(24, 'hours').isAfter(user.token_created_at)) {
+  //       throw new HttpException('EXPIRED_TOKEN', HttpStatus.FORBIDDEN);
+  //     }
 
-      return true;
-    }
-    throw new HttpException('MISSING_FIELDS', HttpStatus.PARTIAL_CONTENT);
-  }
+  //     return true;
+  //   }
+  //   throw new HttpException('MISSING_FIELDS', HttpStatus.PARTIAL_CONTENT);
+  // }
 
 }

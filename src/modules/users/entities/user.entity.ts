@@ -32,16 +32,10 @@ export class User extends BaseEntity {
   uuid: string;
 
   @Column({ nullable: true })
-  first_name: string;
+  name: string;
 
   @Column({ default: true })
   is_active: boolean;
-
-  @Column({ nullable: true })
-  cpf_cnpj: string;
-
-  @Column({ nullable: true })
-  last_name: string;
 
 
   @Column({ unique: true })
@@ -66,31 +60,15 @@ export class User extends BaseEntity {
   })
   public updated_at: Date;
 
-  @Column({ default: '' })
-  token: string;
-
-  @Column({ default: null })
-  token_created_at: Date;
 
   @OneToMany(() => Reminder, (user) => user.user, {cascade:true})
   reminders: Reminder[];
 
 
-
-  // Adicionado o tempPassword para só atualizar caso ele seja diferente, evitando
-  // hash desnecessario
-  private tempPassword: string;
-  @AfterLoad()
-  private loadTempPassword(): void {
-    this.tempPassword = this.password;
-  }
-
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
-    if (this.tempPassword !== this.password) {
       this.password = await bcrypt.hash(this.password, 8);
-    }
   }
 
 

@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   UseGuards,
 } from '@nestjs/common';
@@ -50,12 +51,12 @@ import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
 export class UsersController implements CrudController<User> {
   constructor(public service: UsersService) {}
 
-  get base(): CrudController<User> {
+  get base(): CrudController<any> {
     return this;
   }
 
   @Override()
-  async createOne(@ParsedRequest() req: CrudRequest, @ParsedBody() dto: User) {
+  async createOne(@ParsedRequest() req: CrudRequest, @ParsedBody() dto: CreateUserDto) {
     const userCreated = await this.base.createOneBase(req, dto);
 
 
@@ -95,7 +96,7 @@ export class UsersController implements CrudController<User> {
   @UseGuards(JwtAuthGuard)
   coolFunction(
     @ParsedRequest() req: CrudRequest,
-    @ParsedBody() dto: User,
+    @ParsedBody() dto: UpdateUserDto,
   ) {
     return this.base.updateOneBase(req, dto);
   }

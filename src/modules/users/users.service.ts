@@ -33,10 +33,6 @@ export class UsersService extends TypeOrmCrudService<User> {
 
     userFromDb.password = newPassword;
 
-    // apaga o token
-    userFromDb.token = '';
-    userFromDb.token_created_at = null;
-
     await userFromDb.save();
 
     return true;
