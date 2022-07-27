@@ -37,7 +37,7 @@ import { JwtAuthGuard } from '../../auth/jwt-auth.guard';
     }
   },
   query: {
-    exclude: ['password', 'tempPassword', 'token', 'token_created_at'],
+    exclude: ['password'],
     alwaysPaginate: true,
     join: {
       reminders: {
