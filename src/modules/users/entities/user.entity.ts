@@ -24,18 +24,6 @@ import { Type } from 'class-transformer';
 @Entity()
 export class User extends BaseEntity {
 
-  constructor (user?: Partial<User>) {
-    super();
-    
-    this.id = user?.id;
-    this.name = user?.name;
-    this.is_active = user?.is_active;
-    this.email = user?.email;
-    this.password = user?.password;
-    this.created_at = user?.created_at;
-    this.updated_at = user?.updated_at;
-  }
-
   @PrimaryGeneratedColumn('uuid')
   id: number;
 
