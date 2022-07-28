@@ -11,7 +11,6 @@ import { IResponse } from '../../common/interfaces/response.interface';
 export class UsersService extends TypeOrmCrudService<User> {
   constructor(
     @InjectRepository(User) repo: Repository<User>,
-    private config: ConfigService,
   ) {
     super(repo);
   }
