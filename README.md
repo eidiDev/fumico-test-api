@@ -84,9 +84,10 @@ Usuario:
 - email: string;
 - password: string;
 reminders: Array;
-
-- OBS 1: Na entidade usuários contem campos tipo data que contem o momento da criação e de atualização (created_at e updated_at); \n
+<br>
+- OBS 1: Na entidade usuários contem campos tipo data que contem o momento da criação e de atualização (created_at e updated_at); <br>
 <b> Não é obrigatorio mandar estes campos. </b>
+<br>
 - OBS 2: É possivel criar lembretes a partir do usuário.
 
 - Lembretes:
@@ -94,6 +95,7 @@ reminders: Array;
 - description: string;
 - user: Object;
 
+<br>
 - OBS: Na entidade lembretes, ela faz extends com a entidade a baixo(Default Entity).
 
 DefaultEntity:
