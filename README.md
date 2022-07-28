@@ -123,13 +123,13 @@ O sistema irá validar o usuário, caso sucesso, ira retornar um JSON com seu re
 
 
 
-SOMENTE a rota de CRIAR USUÁRIOS({/users,POST}) não exige AUTH TOKEN na request, todas as outras rotas exigem AUTH bearer.
+SOMENTE a rota de CRIAR USUÁRIOS({/users,POST}) não exige AUTH TOKEN na request, todas as outras rotas exigem AUTH bearer;
 
 
-O usuário somente é permitido na entidade User: editar/ver/excluir o seu própio usuário, caso tente essas opções com um outro usuário ou listar todos os usuarios do sistema, o sistema irá retornar uma response 404 (Not Found).
+O usuário somente é permitido na entidade User: editar/ver/excluir o seu própio usuário, caso tente essas opções com um outro usuário ou listar todos os usuarios do sistema, o sistema irá retornar uma response 404 (Not Found);
 
 
-O usuário somente é permitido na entidade Reminders: criar/editar/ver/excluir os própios reminders.
+O usuário somente é permitido na entidade Reminders: criar/editar/ver/excluir os própios reminders;
 
 Relações:
 
