@@ -88,7 +88,7 @@ reminders: Array;
 - OBS 1: Na entidade usuários contem campos tipo data que contem o momento da criação e de atualização (created_at e updated_at)
 <b> Não é obrigatorio mandar estes campos. </b>
 - OBS 2: É possivel criar lembretes a partir do usuário.
-
+<br>
 Lembretes:
 - title: string;
 - description: string;
