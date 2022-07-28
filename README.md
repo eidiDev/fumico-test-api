@@ -22,6 +22,36 @@ Ajuste no filter do controller Param pelo ID e não pelo o campo UUID(removido)
 - [x] Tarefa 8 - Clean Migration Perdida
 - [x] Tarefa 9 - Remoção da lógica de salvar token no banco de dados  
 
+## Pré-requisitos
+
+* Versão NodeJs - ^14.17.0
+* PostgresSQL - de preferencia a versão 14
+* Git - ^2.24.1
+
+## Instalação da aplicação 
+
+Clone do projeto
+```
+git clone https://github.com/eidiDev/fumico-test-api.git
+```
+
+Acesso a pasta principal 
+```
+cd fumico-test-api
+```
+
+Instalação de dependencias 
+```
+npm install || npm i || yarn 
+```
+
+Iniciando o projeto
+```
+nest start || npm run start
+```
+Obs 1: Dentro da pasta do projeto haverá um arquivo chamado <.env.example> com um exemplo das variaveis de ambiente que serão necessárias para o projeto rodar perfeitamente.
+
+Obs 2: É preciso gerar um token na variavel JWT_SECRET.
 
 
 ## Rotas
