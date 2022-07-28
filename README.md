@@ -108,10 +108,20 @@ DefaultEntity:
 
 Login:
 Para realizar o login na aplicação, é necessário criar um usuário na rota de usuarios;
+
+
 A aplicação irá criar a entidade, e sua senha ira ser criptografada;
+
+
 No get de usuários não será possivel ver informações de senhas;
+
+
 Após criado o usuário, fazer um POST na rota /auth;
+
+
 O sistema irá validar o usuário, caso sucesso, ira retornar um JSON com seu respectivo TOKEN;
+
+
 
 SOMENTE a rota de CRIAR USUÁRIOS({/users,POST}) não exige AUTH TOKEN na request, todas as outras rotas exigem AUTH bearer.
 
