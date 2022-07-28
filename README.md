@@ -75,7 +75,7 @@ Lembretes:
 - {/reminders/:uuid, PUT}
 - {/reminders/:uuid, DELETE}
 
-<h3>Entidades, campos e funcionalidades </h3>
+## Entidades, campos e funcionalidades 
 
 Usuario:
 - id: number;
@@ -85,7 +85,7 @@ Usuario:
 - password: string;
 reminders: Array;
 
-- OBS 1: Na entidade usuários contem campos tipo data que contem o momento da criação e de atualização (created_at e updated_at);
+- OBS 1: Na entidade usuários contem campos tipo data que contem o momento da criação e de atualização (created_at e updated_at); \n
 <b> Não é obrigatorio mandar estes campos. </b>
 - OBS 2: É possivel criar lembretes a partir do usuário.
 
